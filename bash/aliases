@@ -1,0 +1,83 @@
+# Recent
+alias repeat='seq 3 | xargs -Iz'
+alias ls='ls -hlG'
+alias e='ember'
+alias et='ember t'
+alias es='ember s'
+alias eg='ember g'
+
+# Utility
+alias reload='source ~/.bin/dotfiles/bash/aliases'
+alias ea='mate -w ~/.bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="mate ~/.bin/dotfiles/bash/env"
+
+# Testing
+alias br='bin/rspec'
+alias ss="spring status"
+alias sst="spring stop"
+
+# Git
+alias g='git'
+alias gst='git status'
+alias glog='git log'
+alias gca='git commit -v -a'
+alias gc='git commit -v'
+alias gcam='git commit --amend'
+alias gp='git push origin HEAD'
+alias grh='g reset HEAD'
+alias grc='g rebase --continue'
+alias gra='g rebase --abort'
+alias gpom='g push origin master'
+alias gpr='g pull --rebase'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdm='git diff master'
+alias gaa='git add --all'
+alias ga='git add'
+alias gb='git branch'
+alias HEAD='g reset --hard HEAD'
+alias HEAD_1='g reset --hard HEAD~1'
+
+
+# Rails 3
+alias r='./bin/rails'
+alias s='./bin/rails s'
+alias c='./bin/rails c'
+alias ra='./bin/rake'
+
+alias migrate='be rake db:migrate'
+alias prepare='be rake db:test:prepare'
+alias schema='be rake db:schema:load'
+
+alias guard='reseed && prepare && be guard'
+
+function gen() {
+ bundle exec rails g $* --no-stylesheets --no-javascripts
+}
+
+# Bundler
+alias b="bundle"
+alias bi="bundle install && rbenv rehash"
+alias bo="bundle open"
+alias be="bundle exec"
+
+# Other
+alias mp3='find ./ -name "*.mp3" -exec java -jar ~/Downloads/id3iconv-0.2.1.jar -e cp1251 {} \;'
+
+function go() {
+ ssh -i ~/.ssh/ihjoz2-key ubuntu@$*
+}
+
+function go1() {
+ ssh -i ~/.ssh/naharna-key.pem ubuntu@$*
+}
+
+
+alias goihjoz='go ec2-54-210-6-225.compute-1.amazonaws.com'
+alias goqa='go qa.ihjoz.com'
+alias goresque='go ec2-54-208-95-206.compute-1.amazonaws.com'
+
+alias goca2='ssh snipsnap@ca2.snipsnap.it'
+
+export BUNDLER_EDITOR=mate
+alias profile='mate ~/.profile'
